@@ -1,92 +1,183 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="InkAura Books customer account page.">
-  <title>My Account | InkAura Books</title>
+  <meta name="description" content="Sign in to InkAura Books.">
+  <title>Sign In | InkAura Books</title>
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #fbf9f4;
-      color: #292929;
-      line-height: 1.6;
+      background: #fffdf8;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
-      padding: 18px 6%;
-      background: white;
-      border-bottom: 1px solid #eee;
+      padding: 18px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
+      background: white;
+      border-bottom: 1px solid #eee4cc;
     }
 
     .logo {
-      color: #a77b24;
-      font-size: 23px;
+      color: #b18a35;
+      font-size: 25px;
       font-weight: bold;
       text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     nav a {
       color: #333;
       text-decoration: none;
-      margin-left: 15px;
       font-size: 14px;
     }
 
+    nav a:hover {
+      color: #b18a35;
+    }
+
     main {
-      max-width: 480px;
-      margin: 65px auto;
-      padding: 30px 22px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 45px 15px;
+    }
+
+    .signin-box {
+      width: 100%;
+      max-width: 420px;
+      padding: 35px 28px;
       background: white;
-      border: 1px solid #eee;
+      border: 1px solid #eadfca;
       border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.05);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    }
+
+    h1 {
+      color: #a9822f;
       text-align: center;
+      margin-bottom: 8px;
+      font-size: 29px;
     }
 
-    h1 { color: #8b671f; }
-
-    .notice {
-      background: #fbf8f0;
-      border-left: 4px solid #c49a45;
-      padding: 15px;
-      margin: 22px 0;
-      text-align: left;
-      color: #66552f;
+    .subtitle {
+      color: #777;
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 28px;
     }
 
-    .button {
-      display: inline-block;
-      padding: 11px 20px;
-      background: #a77b24;
-      color: white;
-      text-decoration: none;
+    label {
+      display: block;
+      margin: 17px 0 7px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ddd3bf;
       border-radius: 6px;
-      margin-top: 10px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #b18a35;
+    }
+
+    button {
+      width: 100%;
+      padding: 13px;
+      margin-top: 23px;
+      background: #b18a35;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #94702a;
+    }
+
+    .message {
+      display: none;
+      margin-top: 16px;
+      padding: 12px;
+      background: #fffaf0;
+      border-left: 3px solid #b18a35;
+      color: #66552f;
+      font-size: 14px;
+    }
+
+    .bottom-text {
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+      margin-top: 22px;
+    }
+
+    .bottom-text a {
+      color: #a9822f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .security-note {
+      margin-top: 22px;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      line-height: 1.5;
     }
 
     footer {
-      text-align: center;
       padding: 25px 15px;
-      background: #292929;
-      color: white;
+      text-align: center;
+      background: white;
+      border-top: 1px solid #eee4cc;
+      color: #777;
       font-size: 13px;
     }
 
     @media (max-width: 600px) {
-      header { justify-content: center; }
-      nav { text-align: center; }
-      nav a { margin: 0 7px; }
-      main { margin: 35px 15px; }
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .signin-box {
+        padding: 28px 20px;
+      }
     }
   </style>
 </head>
@@ -99,35 +190,75 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="books.html">Books</a>
+      <a href="signin.html">Sign In</a>
     </nav>
   </header>
 
   <main>
-    <h1>My Account</h1>
 
-    <p>
-      Your personal InkAura Books library will provide access
-      to publications you have purchased.
-    </p>
+    <section class="signin-box">
 
-    <div class="notice">
-      <strong>Account registration is coming soon.</strong>
-      Secure sign-in, payment verification and personal library
-      access have not been activated yet.
-    </div>
+      <h1>Welcome Back</h1>
 
-    <p>
-      We are preparing the account system before accepting
-      customer registrations or payments.
-    </p>
+      <p class="subtitle">
+        Sign in to your InkAura Books account.
+      </p>
 
-    <a class="button" href="books.html">Explore Books</a>
+      <form id="signinForm">
+
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          autocomplete="email"
+          required
+        >
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          autocomplete="current-password"
+          required
+        >
+
+        <button type="submit">Sign In</button>
+
+        <div class="message" id="message" role="status">
+          Account sign-in is not active yet. Secure account services
+          will be added when the backend is ready.
+        </div>
+
+      </form>
+
+      <p class="bottom-text">
+        New to InkAura Books?
+        <a href="books.html">Explore our books</a>
+      </p>
+
+      <p class="security-note">
+        Your account and purchased-book library will require
+        secure authentication before launch.
+      </p>
+
+    </section>
+
   </main>
 
   <footer>
-    <p>InkAura Books — Where possibilities grow.</p>
+    <p>InkAura Books — Where Possibilities Grow.</p>
     <p>© 2026 InkAura Books. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.getElementById("signinForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      document.getElementById("message").style.display = "block";
+    });
+  </script>
 
 </body>
 </html>
