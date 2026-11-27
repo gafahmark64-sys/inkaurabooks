@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffdf8">
+  <title>Book Collections | InkAura Books</title>
+
+  <style>
+    :root {
+      --gold: #b58a3b;
+      --gold-dark: #8b682b;
+      --gold-light: #eadfc8;
+      --ivory: #fffdf8;
+      --text: #302c25;
+      --muted: #746f66;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: white;
+    }
+
+    header {
+      border-bottom: 1px solid var(--gold-light);
+      padding: 16px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .logo {
+      color: var(--gold-dark);
+      font-size: 23px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 45px 20px 70px;
+    }
+
+    .eyebrow {
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.3;
+    }
+
+    h1, h2, h3 {
+      color: var(--gold-dark);
+    }
+
+    h1 { font-size: 36px; }
+
+    p { color: var(--muted); }
+
+    .book-card {
+      max-width: 350px;
+      margin-top: 30px;
+      border: 1px solid var(--gold-light);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--ivory);
+    }
+
+    .book-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: contain;
+      padding: 15px;
+    }
+
+    .book-info { padding: 20px; }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--gold-dark);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      background: var(--gold);
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .button:hover { background: var(--gold-dark); }
+
+    .notice {
+      padding: 18px;
+      margin-top: 30px;
+      background: var(--ivory);
+      border-left: 3px solid var(--gold);
+    }
+
+    footer {
+      background: #29251f;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    footer p { color: #d4cabb; }
+
+    @media (max-width: 600px) {
+      header { justify-content: center; }
+      nav { justify-content: center; }
+      h1 { font-size: 29px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">InkAura Books</a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="books.html">All Books</a>
+    <a href="signin.html">My Account</a>
+  </nav>
+</header>
+
+<main>
+
+  <p class="eyebrow">InkAura Collections</p>
+
+  <h1 id="categoryTitle">Explore Our Collection</h1>
+
+  <p id="categoryDescription">
+    Discover publications from InkAura Books.
+  </p>
+
+  <div id="bookList"></div>
+
+  <div class="notice" id="emptyNotice" hidden>
+    <strong>More publications are coming.</strong>
+    <p>
+      This collection is being prepared. Please check again
+      as InkAura Books publishes more titles.
+    </p>
+  </div>
+
+  <p>
+    <a class="button" href="books.html">View All Books</a>
+    <a class="button" href="index.html">Return Home</a>
+  </p>
+
+</main>
+
+<footer>
+  <strong>InkAura Books</strong>
+  <p>Where Possibilities Grow.</p>
+  <p>© 2026 InkAura Books. All rights reserved.</p>
+</footer>
+
+<script>
+  const categories = {
+    bible: {
+      title: "Bible Storybooks",
+      description: "Faith-inspired stories and Scripture learning.",
+      books: ["creation"]
+    },
+
+    colouring: {
+      title: "Colouring & Activities",
+      description: "Creative colouring and activity publications.",
+      books: ["creation"]
+    },
+
+    education: {
+      title: "Educational Books",
+      description: "Resources for learning and discovery.",
+      books: []
+    },
+
+    creative: {
+      title: "Creative Stories",
+      description: "Imagination, storytelling and adventure.",
+      books: []
+    }
+  };
+
+  const publications = {
+    creation: {
+      title: "God's Wonderful Creation",
+      description: "A Bible Colouring Storybook based on Genesis 1–3.",
+      cover: "preview-cover.jpg",
+      price: "GH₵25.30",
+      link: "book-gods-wonderful-creation.html"
+    }
+  };
+
+  const parameters = new URLSearchParams(window.location.search);
+  const selected = parameters.get("type");
+  const category = categories[selected];
+
+  const title = document.getElementById("categoryTitle");
+  const description = document.getElementById("categoryDescription");
+  const bookList = document.getElementById("bookList");
+  const emptyNotice = document.getElementById("emptyNotice");
+
+  if (!category) {
+    title.textContent = "Collection Not Found";
+    description.textContent = "Please choose a valid InkAura collection.";
+    emptyNotice.hidden = false;
+  } else {
+    title.textContent = category.title;
+    description.textContent = category.description;
+
+    if (category.books.length === 0) {
+      emptyNotice.hidden = false;
+    } else {
+      category.books.forEach(function(bookId) {
+        const book = publications[bookId];
+
+        if (!book) return;
+
+        const article = document.createElement("article");
+        article.className = "book-card";
+
+        const image = document.createElement("img");
+        image.src = book.cover;
+        image.alt = book.title + " cover";
+
+        const info = document.createElement("div");
+        info.className = "book-info";
+
+        const heading = document.createElement("h2");
+        heading.textContent = book.title;
+
+        const summary = document.createElement("p");
+        summary.textContent = book.description;
+
+        const price = document.createElement("p");
+        price.className = "price";
+        price.textContent = book.price;
+
+        const link = document.createElement("a");
+        link.className = "button";
+        link.href = book.link;
+        link.textContent = "View Book";
+
+        info.append(heading, summary, price, link);
+        article.append(image, info);
+        bookList.appendChild(article);
+      });
+    }
+  }
+</script>
+
+</body>
+</html>
