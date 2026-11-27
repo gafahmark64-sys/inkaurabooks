@@ -4,382 +4,313 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fffdf8">
-
-  <meta
-    name="description"
-    content="God's Wonderful Creation — a Bible Colouring Storybook from InkAura Books.">
-
+  <meta name="description" content="Discover God's Wonderful Creation, a Bible Colouring Storybook from InkAura Books.">
   <title>God's Wonderful Creation | InkAura Books</title>
 
   <style>
-    :root {
-      --gold: #b58a3b;
-      --gold-dark: #8b682b;
-      --gold-light: #eadfc8;
-      --ivory: #fffdf8;
-      --text: #302c25;
-      --muted: #746f66;
-      --white: #ffffff;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-
-    * { box-sizing: border-box; }
 
     body {
-      margin: 0;
-      background: white;
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
+      font-family: Arial, sans-serif;
+      color: #292929;
+      line-height: 1.6;
+      background: #fff;
     }
 
     header {
-      border-bottom: 1px solid var(--gold-light);
-      background: white;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 15px 22px;
+      padding: 18px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-bottom: 1px solid #eee4cc;
     }
 
     .logo {
-      font-size: 23px;
+      color: #b18a35;
+      font-size: 25px;
       font-weight: bold;
-      color: var(--gold-dark);
+      text-decoration: none;
     }
 
-    .logo small {
-      display: block;
-      font-size: 10px;
-      letter-spacing: 3px;
-      font-weight: normal;
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
-    .back-link {
-      color: var(--gold-dark);
-      font-weight: bold;
+    nav a {
+      color: #333;
+      text-decoration: none;
       font-size: 14px;
     }
 
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 0 22px;
+    nav a:hover {
+      color: #b18a35;
     }
 
-    .product {
+    .container {
+      width: 90%;
+      max-width: 1050px;
+      margin: 40px auto;
+    }
+
+    .breadcrumb {
+      margin-bottom: 25px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    .breadcrumb a {
+      color: #a9822f;
+      text-decoration: none;
+    }
+
+    .book-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-      padding: 65px 0;
+      grid-template-columns: minmax(0, 350px) 1fr;
+      gap: 40px;
       align-items: start;
     }
 
     .cover {
-      background: var(--ivory);
-      border: 1px solid var(--gold-light);
-      padding: 20px;
-      border-radius: 7px;
-    }
-
-    .cover img {
       width: 100%;
-      height: 430px;
-      object-fit: contain;
+      max-width: 350px;
+      border-radius: 10px;
+      border: 1px solid #eee4cc;
+      display: block;
     }
 
-    .eyebrow {
-      color: var(--gold-dark);
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+    h1, h2 {
+      color: #a9822f;
     }
-
-    h1, h2, h3 { line-height: 1.25; }
 
     h1 {
-      font-size: clamp(32px, 5vw, 45px);
-      color: var(--gold-dark);
-      margin: 10px 0;
+      font-size: 32px;
+      line-height: 1.25;
+      margin-bottom: 15px;
     }
 
-    h2 {
-      font-size: 29px;
-      color: var(--gold-dark);
-    }
-
-    h3 { color: var(--gold-dark); }
-
-    p { color: var(--muted); }
-
-    .subtitle {
-      font-size: 19px;
-      color: var(--text);
+    .description {
+      color: #666;
+      margin-bottom: 20px;
     }
 
     .price {
-      font-size: 26px;
+      font-size: 23px;
       font-weight: bold;
-      color: var(--gold-dark);
-    }
-
-    .price small {
-      display: block;
-      font-size: 12px;
-      font-weight: normal;
-      color: var(--muted);
+      margin: 20px 0;
     }
 
     .details {
+      margin: 20px 0;
       padding-left: 20px;
-      color: var(--muted);
+    }
+
+    .details li {
+      margin-bottom: 8px;
     }
 
     .notice {
-      background: var(--ivory);
-      border-left: 3px solid var(--gold);
-      padding: 17px;
-      margin: 22px 0;
+      background: #fffaf0;
+      border-left: 3px solid #b18a35;
+      padding: 15px;
+      margin-top: 20px;
+      color: #66552f;
+      font-size: 14px;
     }
 
     .button {
       display: inline-block;
-      background: var(--gold);
+      background: #b18a35;
       color: white;
-      padding: 12px 20px;
+      text-decoration: none;
+      padding: 11px 20px;
       border-radius: 5px;
-      font-weight: bold;
-      margin: 8px 0;
+      margin-top: 12px;
     }
 
-    .button:hover { background: var(--gold-dark); }
+    .button:hover {
+      background: #94702a;
+    }
 
-    .preview-section {
-      padding: 60px 0;
-      background: var(--ivory);
-      border-top: 1px solid var(--gold-light);
+    .previews {
+      margin-top: 55px;
+    }
+
+    .previews h2 {
+      margin-bottom: 20px;
     }
 
     .preview-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
     }
 
-    figure {
-      margin: 0;
+    .preview-item {
+      border: 1px solid #eee4cc;
+      border-radius: 9px;
       padding: 12px;
-      background: white;
-      border: 1px solid var(--gold-light);
+      background: #fff;
     }
 
-    figure img {
+    .preview-item img {
       width: 100%;
-      height: 280px;
-      object-fit: contain;
+      display: block;
+      border-radius: 5px;
     }
 
-    figcaption {
-      color: var(--muted);
-      font-size: 13px;
-      padding-top: 10px;
+    .preview-item p {
+      margin-top: 10px;
+      color: #666;
+      font-size: 14px;
     }
 
     footer {
-      background: #29251f;
-      color: white;
-      padding: 30px 20px;
+      margin-top: 60px;
+      padding: 25px 15px;
       text-align: center;
+      background: #fffdf8;
+      border-top: 1px solid #eee4cc;
+      color: #777;
+      font-size: 13px;
     }
 
-    footer p { color: #d4cabb; }
-
-    @media (max-width: 750px) {
-      .product {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 40px 0;
+    @media (max-width: 700px) {
+      header {
+        justify-content: center;
       }
 
-      .cover img { height: 340px; }
+      nav {
+        justify-content: center;
+      }
 
-      .preview-grid { grid-template-columns: 1fr; }
+      .book-layout {
+        grid-template-columns: 1fr;
+      }
 
-      figure img { height: 260px; }
+      .cover {
+        max-width: 280px;
+        margin: auto;
+      }
 
-      main { padding: 0 15px; }
+      h1 {
+        font-size: 27px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
-    <a class="logo" href="index.html">
-      InkAura Books
-      <small>WHERE POSSIBILITIES GROW</small>
-    </a>
+  <header>
+    <a class="logo" href="index.html">InkAura Books</a>
 
-    <a class="back-link" href="index.html">
-      ← Back to Home
-    </a>
-  </div>
-</header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="signin.html">Sign In</a>
+    </nav>
+  </header>
 
-<main>
+  <main class="container">
 
-  <!-- BOOK INFORMATION -->
-  <section class="product">
-
-    <div class="cover">
-      <img
-        src="preview-cover.jpg"
-        alt="God's Wonderful Creation book cover">
-    </div>
-
-    <div>
-
-      <p class="eyebrow">InkAura Books · First Publication</p>
-
-      <h1>God's Wonderful Creation</h1>
-
-      <p class="subtitle">
-        A Bible Colouring Storybook
-      </p>
-
-      <p>
-        Discover the beginning of creation through
-        Bible stories, Scripture and creative colouring.
-      </p>
-
-      <p>
-        This publication is based on Genesis chapters
-        1–3, using the King James Version of the Bible.
-      </p>
-
-      <h3>Book Information</h3>
-
-      <ul class="details">
-        <li><strong>Title:</strong> God's Wonderful Creation</li>
-        <li><strong>Publisher:</strong> InkAura Books</li>
-        <li><strong>Format:</strong> Digital publication</li>
-        <li><strong>Scripture:</strong> Genesis 1–3 (KJV)</li>
-        <li><strong>Language:</strong> English</li>
-        <li><strong>Pages:</strong> 41 (verify against final edition)</li>
-        <li><strong>Book type:</strong> Bible colouring storybook</li>
-      </ul>
-
-      <p class="price">
-        GH₵25.30
-        <small>Proposed Ghana launch price</small>
-      </p>
-
-      <div class="notice">
-        <strong>Free Sample Preview</strong>
-        <p>
-          Explore selected sample pages before deciding
-          whether this publication is right for you.
-        </p>
-      </div>
-
-      <a
-        class="button"
-        href="preview-gods-wonderful-creation.pdf"
-        target="_blank"
-        rel="noopener">
-        Read Sample PDF
-      </a>
-
-      <div class="notice">
-        <strong>Purchases are not active yet.</strong>
-        <p>
-          Secure payment verification and private
-          digital delivery must be connected before
-          customers can purchase the full edition.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- PREVIEW IMAGES -->
-  <section class="preview-section">
-
-    <p class="eyebrow">Take a look inside</p>
-
-    <h2>Book Preview</h2>
-
-    <p>
-      Here are selected illustrations and pages
-      from God's Wonderful Creation.
+    <p class="breadcrumb">
+      <a href="index.html">Home</a> /
+      <a href="books.html">Books</a> /
+      God's Wonderful Creation
     </p>
 
-    <div class="preview-grid">
+    <section class="book-layout">
 
-      <figure>
+      <div>
         <img
-          src="preview-story-in-the-beginning.jpg"
-          alt="In the Beginning story page preview">
+          class="cover"
+          src="preview-cover.jpg"
+          alt="God's Wonderful Creation book cover"
+        >
+      </div>
 
-        <figcaption>
-          Story Page — In the Beginning
-        </figcaption>
-      </figure>
+      <div>
+        <h1>God's Wonderful Creation</h1>
 
-      <figure>
-        <img
-          src="preview-colouring-in-the-beginning.jpg"
-          alt="In the Beginning colouring page preview">
+        <p class="description">
+          A Bible Colouring Storybook based on Genesis chapters 1–3.
+          Explore the beginning of creation through Bible storytelling,
+          Scripture and colouring activities.
+        </p>
 
-        <figcaption>
-          Colouring Page — In the Beginning
-        </figcaption>
-      </figure>
+        <p><strong>Publisher:</strong> InkAura Books</p>
+        <p><strong>Format:</strong> Digital publication</p>
+        <p><strong>Scripture:</strong> King James Version (KJV)</p>
 
-      <figure>
-        <img
-          src="preview-colouring-let-there-be-light.jpg"
-          alt="Let there be light colouring page preview">
+        <p class="price">GH₵25.30</p>
 
-        <figcaption>
-          Colouring Page — Let There Be Light
-        </figcaption>
-      </figure>
+        <h2>What to expect</h2>
 
-    </div>
+        <ul class="details">
+          <li>Bible-based storytelling</li>
+          <li>Scripture passages and references</li>
+          <li>Black-and-white colouring illustrations</li>
+          <li>Learning and reflection activities</li>
+        </ul>
 
-  </section>
+        <div class="notice">
+          <strong>Purchasing is not yet available.</strong>
+          This page currently presents the book and its sample
+          illustrations. Secure payment and digital delivery
+          will be added after the necessary systems are set up.
+        </div>
 
-</main>
+        <a class="button" href="books.html">Back to Books</a>
+      </div>
 
-<footer>
-  <strong>InkAura Books</strong>
-  <p>Where Possibilities Grow.</p>
-  <p>© 2026 InkAura Books. All rights reserved.</p>
-</footer>
+    </section>
+
+    <section class="previews">
+      <h2>Book Preview</h2>
+
+      <div class="preview-grid">
+
+        <div class="preview-item">
+          <img
+            src="preview-story-in-the-beginning.jpg"
+            alt="Story preview: In the Beginning"
+          >
+          <p>Story Preview — In the Beginning</p>
+        </div>
+
+        <div class="preview-item">
+          <img
+            src="preview-colouring-in-the-beginning.jpg"
+            alt="Colouring preview: In the Beginning"
+          >
+          <p>Colouring Preview — In the Beginning</p>
+        </div>
+
+        <div class="preview-item">
+          <img
+            src="preview-colouring-let-there-be-light.jpg"
+            alt="Colouring preview: Let There Be Light"
+          >
+          <p>Colouring Preview — Let There Be Light</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>InkAura Books — Where Possibilities Grow.</p>
+    <p>© 2026 InkAura Books. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
