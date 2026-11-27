@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore digital books and creative publications from InkAura Books.">
+  <title>Books | InkAura Books</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #292929;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 18px 6%;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .logo {
+      color: #a77b24;
+      font-size: 23px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 65px 20px 45px;
+      background: #fbf8f0;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 36px;
+      color: #8b671f;
+    }
+
+    .hero p {
+      max-width: 550px;
+      margin: auto;
+      color: #666;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 45px 20px;
+    }
+
+    .section-title {
+      color: #8b671f;
+      margin-bottom: 25px;
+    }
+
+    .book-card {
+      max-width: 340px;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 5px 18px rgba(0,0,0,.05);
+    }
+
+    .book-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 5;
+      object-fit: contain;
+      background: #f8f6f0;
+    }
+
+    .book-info { padding: 20px; }
+
+    .book-info h3 {
+      margin-top: 0;
+      color: #8b671f;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 19px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #a77b24;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .notice {
+      margin-top: 35px;
+      padding: 18px;
+      background: #fbf8f0;
+      border-left: 4px solid #c49a45;
+      color: #66552f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      background: #292929;
+      color: white;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header { justify-content: center; }
+      nav { text-align: center; }
+      nav a { margin: 0 7px; }
+      .hero h1 { font-size: 29px; }
+      .book-card { margin: auto; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="index.html">InkAura Books</a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="signin.html">My Account</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Explore Our Books</h1>
+    <p>Discover meaningful stories, learning resources and creative publications.</p>
+  </section>
+
+  <main>
+    <h2 class="section-title">Available Publications</h2>
+
+    <article class="book-card">
+      <img
+        src="preview-cover.jpg"
+        alt="God's Wonderful Creation book cover"
+      >
+
+      <div class="book-info">
+        <h3>God's Wonderful Creation</h3>
+
+        <p>
+          A Bible-themed colouring and storybook inspired by
+          the opening chapters of Genesis.
+        </p>
+
+        <p class="price">GH₵25.30</p>
+
+        <a class="button" href="book-gods-wonderful-creation.html">
+          View Book
+        </a>
+      </div>
+    </article>
+
+    <div class="notice">
+      <strong>Important:</strong>
+      Online purchasing and automatic digital delivery are not active yet.
+      This catalogue currently allows visitors to explore the publication.
+    </div>
+  </main>
+
+  <footer>
+    <p>InkAura Books — Where possibilities grow.</p>
+    <p>© 2026 InkAura Books. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
