@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore digital books and creative publications from InkAura Books.">
-  <title>Books | InkAura Books</title>
+  <title>Our Books | InkAura Books</title>
+  <meta name="description" content="Explore digital Bible storybooks, colouring books, educational books and creative publications at InkAura Books.">
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
       background: #fff;
       color: #292929;
@@ -18,119 +21,186 @@
     }
 
     header {
-      padding: 18px 6%;
-      border-bottom: 1px solid #eee;
+      padding: 18px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid #eee4cc;
       flex-wrap: wrap;
       gap: 12px;
     }
 
     .logo {
-      color: #a77b24;
-      font-size: 23px;
+      color: #b18a35;
+      font-size: 25px;
       font-weight: bold;
       text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: #333;
       text-decoration: none;
-      margin-left: 15px;
       font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #b18a35;
     }
 
     .hero {
       text-align: center;
-      padding: 65px 20px 45px;
-      background: #fbf8f0;
+      padding: 55px 20px 35px;
+      background: #fffdf8;
     }
 
     .hero h1 {
-      margin: 0 0 10px;
-      font-size: 36px;
-      color: #8b671f;
+      color: #a9822f;
+      font-size: 34px;
+      margin-bottom: 10px;
     }
 
     .hero p {
-      max-width: 550px;
+      max-width: 600px;
       margin: auto;
       color: #666;
     }
 
-    main {
-      max-width: 1050px;
-      margin: auto;
-      padding: 45px 20px;
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
     }
 
     .section-title {
-      color: #8b671f;
-      margin-bottom: 25px;
+      color: #a9822f;
+      margin-bottom: 22px;
+      font-size: 24px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-bottom: 55px;
+    }
+
+    .category {
+      display: block;
+      padding: 22px;
+      border: 1px solid #eadfca;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #333;
+      background: #fff;
+      transition: 0.2s;
+    }
+
+    .category:hover {
+      border-color: #c5a04d;
+      transform: translateY(-3px);
+    }
+
+    .category h3 {
+      color: #a9822f;
+      margin-bottom: 7px;
     }
 
     .book-card {
-      max-width: 340px;
-      border: 1px solid #eee;
+      max-width: 750px;
+      display: grid;
+      grid-template-columns: minmax(0, 260px) 1fr;
+      gap: 25px;
+      padding: 22px;
+      border: 1px solid #eadfca;
       border-radius: 12px;
-      overflow: hidden;
-      background: white;
-      box-shadow: 0 5px 18px rgba(0,0,0,.05);
+      align-items: center;
     }
 
     .book-card img {
       width: 100%;
+      max-width: 260px;
+      border-radius: 7px;
       display: block;
-      aspect-ratio: 4 / 5;
-      object-fit: contain;
-      background: #f8f6f0;
     }
 
-    .book-info { padding: 20px; }
-
     .book-info h3 {
-      margin-top: 0;
-      color: #8b671f;
+      color: #a9822f;
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .book-info p {
+      color: #666;
+      margin-bottom: 12px;
     }
 
     .price {
+      font-size: 20px;
       font-weight: bold;
-      font-size: 19px;
+      color: #333;
+      margin: 15px 0;
     }
 
     .button {
       display: inline-block;
-      background: #a77b24;
+      padding: 11px 20px;
+      background: #b18a35;
       color: white;
-      padding: 11px 18px;
-      border-radius: 6px;
       text-decoration: none;
-      margin-top: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #94702a;
     }
 
     .notice {
-      margin-top: 35px;
-      padding: 18px;
-      background: #fbf8f0;
-      border-left: 4px solid #c49a45;
+      margin-top: 18px;
+      padding: 14px;
+      background: #fffaf0;
+      border-left: 3px solid #b18a35;
       color: #66552f;
+      font-size: 14px;
     }
 
     footer {
-      text-align: center;
+      margin-top: 60px;
       padding: 25px 15px;
-      background: #292929;
-      color: white;
+      text-align: center;
+      background: #fffdf8;
+      border-top: 1px solid #eee4cc;
+      color: #777;
       font-size: 13px;
     }
 
     @media (max-width: 600px) {
-      header { justify-content: center; }
-      nav { text-align: center; }
-      nav a { margin: 0 7px; }
-      .hero h1 { font-size: 29px; }
-      .book-card { margin: auto; }
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .book-card {
+        grid-template-columns: 1fr;
+      }
+
+      .book-card img {
+        max-width: 230px;
+        margin: auto;
+      }
     }
   </style>
 </head>
@@ -143,19 +213,50 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="books.html">Books</a>
-      <a href="signin.html">My Account</a>
+      <a href="signin.html">Sign In</a>
     </nav>
   </header>
 
   <section class="hero">
     <h1>Explore Our Books</h1>
-    <p>Discover meaningful stories, learning resources and creative publications.</p>
+    <p>
+      Discover meaningful stories, Bible-inspired publications,
+      colouring activities and educational resources.
+    </p>
   </section>
 
-  <main>
-    <h2 class="section-title">Available Publications</h2>
+  <main class="container">
 
-    <article class="book-card">
+    <h2 class="section-title">Browse Collections</h2>
+
+    <div class="categories">
+
+      <a class="category" href="category.html?type=bible">
+        <h3>Bible Storybooks</h3>
+        <p>Stories and learning inspired by Scripture.</p>
+      </a>
+
+      <a class="category" href="category.html?type=colouring">
+        <h3>Colouring & Activities</h3>
+        <p>Creative activities for learning and enjoyment.</p>
+      </a>
+
+      <a class="category" href="category.html?type=education">
+        <h3>Educational Books</h3>
+        <p>Resources designed to support learning.</p>
+      </a>
+
+      <a class="category" href="category.html?type=creative">
+        <h3>Creative Stories</h3>
+        <p>Imaginative publications and original stories.</p>
+      </a>
+
+    </div>
+
+    <h2 class="section-title">Featured Publication</h2>
+
+    <div class="book-card">
+
       <img
         src="preview-cover.jpg"
         alt="God's Wonderful Creation book cover"
@@ -165,27 +266,32 @@
         <h3>God's Wonderful Creation</h3>
 
         <p>
-          A Bible-themed colouring and storybook inspired by
-          the opening chapters of Genesis.
+          A Bible Colouring Storybook based on Genesis chapters 1–3.
+          Explore the beginning of creation through Scripture,
+          storytelling and colouring activities.
         </p>
 
         <p class="price">GH₵25.30</p>
 
-        <a class="button" href="book-gods-wonderful-creation.html">
+        <a
+          class="button"
+          href="book-gods-wonderful-creation.html"
+        >
           View Book
         </a>
-      </div>
-    </article>
 
-    <div class="notice">
-      <strong>Important:</strong>
-      Online purchasing and automatic digital delivery are not active yet.
-      This catalogue currently allows visitors to explore the publication.
+        <div class="notice">
+          This is a digital publication. Online purchasing and
+          secure delivery are not yet activated.
+        </div>
+      </div>
+
     </div>
+
   </main>
 
   <footer>
-    <p>InkAura Books — Where possibilities grow.</p>
+    <p>InkAura Books — Where Possibilities Grow.</p>
     <p>© 2026 InkAura Books. All rights reserved.</p>
   </footer>
 
