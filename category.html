@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#fffdf8">
+  <meta name="description" content="Explore book collections at InkAura Books.">
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/png" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+
   <title>Book Collections | InkAura Books</title>
 
   <style>
@@ -72,9 +78,6 @@
 
     h1, h2, h3 {
       line-height: 1.3;
-    }
-
-    h1, h2, h3 {
       color: var(--gold-dark);
     }
 
@@ -279,6 +282,17 @@
         bookList.appendChild(article);
       });
     }
+  }
+</script>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./service-worker.js")
+        .catch(error => {
+          console.error("Service worker registration failed:", error);
+        });
+    });
   }
 </script>
 
