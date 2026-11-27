@@ -7,6 +7,12 @@
   <meta name="theme-color" content="#fffdf8">
   <meta name="description" content="InkAura Books — Where possibilities grow. Discover digital books, Bible storybooks and creative learning resources.">
 
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="InkAura Books">
+
+  <link rel="manifest" href="./manifest.json">
+
   <title>InkAura Books | Where Possibilities Grow</title>
 
   <style>
@@ -152,17 +158,28 @@
 
     .hero p { font-size: 17px; }
 
-    .button {
+    .button,
+    .install-button {
       display: inline-block;
       padding: 12px 22px;
       background: var(--gold);
       color: white;
+      border: none;
       border-radius: 5px;
       font-weight: bold;
       margin-top: 12px;
+      cursor: pointer;
+      font-size: 14px;
     }
 
-    .button:hover { background: var(--gold-dark); }
+    .button:hover,
+    .install-button:hover {
+      background: var(--gold-dark);
+    }
+
+    .install-button[hidden] {
+      display: none !important;
+    }
 
     .hero-image {
       width: 240px;
@@ -357,6 +374,16 @@
         Explore Our Books
       </a>
 
+      <br>
+
+      <button
+        class="install-button"
+        id="installButton"
+        type="button"
+        hidden>
+        Install InkAura App
+      </button>
+
     </div>
 
     <img
@@ -534,6 +561,48 @@
       nav.classList.contains("open")
     );
   }
+
+  // Register the InkAura Books service worker.
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+      navigator.serviceWorker.register("./service-worker.js")
+        .catch(function(error) {
+          console.error("App service worker registration failed:", error);
+        });
+    });
+  }
+
+  // Handle Android/Chrome app installation.
+  let installPrompt = null;
+
+  const installButton = document.getElementById("installButton");
+
+  window.addEventListener("beforeinstallprompt", function(event) {
+    event.preventDefault();
+
+    installPrompt = event;
+    installButton.hidden = false;
+  });
+
+  installButton.addEventListener("click", async function() {
+    if (!installPrompt) return;
+
+    installPrompt.prompt();
+
+    const result = await installPrompt.userChoice;
+
+    if (result.outcome === "accepted") {
+      installButton.hidden = true;
+    }
+
+    installPrompt = null;
+  });
+
+  // Hide the installation button after successful installation.
+  window.addEventListener("appinstalled", function() {
+    installButton.hidden = true;
+    installPrompt = null;
+  });
 </script>
 
 </body>
