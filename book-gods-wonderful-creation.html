@@ -14,11 +14,7 @@
   <title>God's Wonderful Creation | InkAura Books</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: Arial, sans-serif;
@@ -44,11 +40,7 @@
       text-decoration: none;
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+    nav { display: flex; flex-wrap: wrap; gap: 20px; }
 
     nav a {
       color: #333;
@@ -56,9 +48,7 @@
       font-size: 14px;
     }
 
-    nav a:hover {
-      color: #b18a35;
-    }
+    nav a:hover { color: #b18a35; }
 
     .container {
       width: 90%;
@@ -93,9 +83,7 @@
       margin: auto;
     }
 
-    h1, h2 {
-      color: #a9822f;
-    }
+    h1, h2 { color: #a9822f; }
 
     h1 {
       font-size: 32px;
@@ -103,9 +91,7 @@
       margin-bottom: 15px;
     }
 
-    h2 {
-      margin-bottom: 18px;
-    }
+    h2 { margin-bottom: 18px; }
 
     .description {
       color: #666;
@@ -123,9 +109,7 @@
       padding-left: 20px;
     }
 
-    .details li {
-      margin-bottom: 8px;
-    }
+    .details li { margin-bottom: 8px; }
 
     .button {
       display: inline-block;
@@ -138,9 +122,7 @@
       font-weight: bold;
     }
 
-    .button:hover {
-      background: #94702a;
-    }
+    .button:hover { background: #94702a; }
 
     .button.secondary {
       background: white;
@@ -157,9 +139,7 @@
       font-size: 14px;
     }
 
-    .previews {
-      margin-top: 55px;
-    }
+    .previews { margin-top: 55px; }
 
     .preview-grid {
       display: grid;
@@ -197,25 +177,11 @@
     }
 
     @media (max-width: 700px) {
-      header {
-        justify-content: center;
-      }
-
-      nav {
-        justify-content: center;
-      }
-
-      .book-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .cover {
-        max-width: 280px;
-      }
-
-      h1 {
-        font-size: 27px;
-      }
+      header { justify-content: center; }
+      nav { justify-content: center; }
+      .book-layout { grid-template-columns: 1fr; }
+      .cover { max-width: 280px; }
+      h1 { font-size: 27px; }
     }
   </style>
 </head>
@@ -245,7 +211,7 @@
       <div>
         <img
           class="cover"
-          src="./books/gods-wonderful-creation/file_000000009b7082108223e31d2308a68c.png"
+          src="https://raw.githubusercontent.com/gafahmark64-sys/inkaurabooks/main/books/gods-wonderful-creation/file_000000009b7082108223e31d2308a68c.png"
           alt="God's Wonderful Creation Bible Colouring Storybook cover"
         >
       </div>
@@ -340,10 +306,7 @@
       window.addEventListener("load", () => {
         navigator.serviceWorker.register("./service-worker.js")
           .catch(error => {
-            console.error(
-              "Service worker registration failed:",
-              error
-            );
+            console.error("Service worker registration failed:", error);
           });
       });
     }
