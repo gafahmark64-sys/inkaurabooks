@@ -4,15 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover God's Wonderful Creation, a Bible Colouring Storybook from InkAura Books.">
+  <meta name="description" content="Preview God's Wonderful Creation, a Bible Colouring Storybook from InkAura Books.">
   <title>God's Wonderful Creation | InkAura Books</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: Arial, sans-serif;
@@ -38,11 +34,7 @@
       text-decoration: none;
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+    nav { display: flex; flex-wrap: wrap; gap: 20px; }
 
     nav a {
       color: #333;
@@ -50,9 +42,7 @@
       font-size: 14px;
     }
 
-    nav a:hover {
-      color: #b18a35;
-    }
+    nav a:hover { color: #b18a35; }
 
     .container {
       width: 90%;
@@ -86,15 +76,15 @@
       display: block;
     }
 
-    h1, h2 {
-      color: #a9822f;
-    }
+    h1, h2 { color: #a9822f; }
 
     h1 {
       font-size: 32px;
       line-height: 1.25;
       margin-bottom: 15px;
     }
+
+    h2 { margin-bottom: 18px; }
 
     .description {
       color: #666;
@@ -112,8 +102,25 @@
       padding-left: 20px;
     }
 
-    .details li {
-      margin-bottom: 8px;
+    .details li { margin-bottom: 8px; }
+
+    .button {
+      display: inline-block;
+      background: #b18a35;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      margin: 8px 8px 8px 0;
+      font-weight: bold;
+    }
+
+    .button:hover { background: #94702a; }
+
+    .button.secondary {
+      background: white;
+      color: #a9822f;
+      border: 1px solid #b18a35;
     }
 
     .notice {
@@ -125,27 +132,7 @@
       font-size: 14px;
     }
 
-    .button {
-      display: inline-block;
-      background: #b18a35;
-      color: white;
-      text-decoration: none;
-      padding: 11px 20px;
-      border-radius: 5px;
-      margin-top: 12px;
-    }
-
-    .button:hover {
-      background: #94702a;
-    }
-
-    .previews {
-      margin-top: 55px;
-    }
-
-    .previews h2 {
-      margin-bottom: 20px;
-    }
+    .previews { margin-top: 55px; }
 
     .preview-grid {
       display: grid;
@@ -183,26 +170,11 @@
     }
 
     @media (max-width: 700px) {
-      header {
-        justify-content: center;
-      }
-
-      nav {
-        justify-content: center;
-      }
-
-      .book-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .cover {
-        max-width: 280px;
-        margin: auto;
-      }
-
-      h1 {
-        font-size: 27px;
-      }
+      header { justify-content: center; }
+      nav { justify-content: center; }
+      .book-layout { grid-template-columns: 1fr; }
+      .cover { max-width: 280px; margin: auto; }
+      h1 { font-size: 27px; }
     }
   </style>
 </head>
@@ -261,20 +233,30 @@
           <li>Learning and reflection activities</li>
         </ul>
 
-        <div class="notice">
-          <strong>Purchasing is not yet available.</strong>
-          This page currently presents the book and its sample
-          illustrations. Secure payment and digital delivery
-          will be added after the necessary systems are set up.
-        </div>
+        <a
+          class="button"
+          href="preview-gods-wonderful-creation.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          Read Free Preview
+        </a>
 
-        <a class="button" href="books.html">Back to Books</a>
+        <a class="button secondary" href="books.html">
+          Back to Books
+        </a>
+
+        <div class="notice">
+          The free preview is available to visitors.
+          Purchasing the complete book and secure digital delivery
+          are not yet activated.
+        </div>
       </div>
 
     </section>
 
     <section class="previews">
-      <h2>Book Preview</h2>
+      <h2>Explore the Illustrations</h2>
 
       <div class="preview-grid">
 
