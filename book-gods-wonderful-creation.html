@@ -4,7 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffdf8">
   <meta name="description" content="Preview God's Wonderful Creation, a Bible Colouring Storybook from InkAura Books.">
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/png" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+
   <title>God's Wonderful Creation | InkAura Books</title>
 
   <style>
@@ -293,6 +299,17 @@
     <p>InkAura Books — Where Possibilities Grow.</p>
     <p>© 2026 InkAura Books. All rights reserved.</p>
   </footer>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js")
+          .catch(error => {
+            console.error("Service worker registration failed:", error);
+          });
+      });
+    }
+  </script>
 
 </body>
 </html>
