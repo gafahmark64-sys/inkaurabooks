@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffdf8">
+  <meta name="description" content="Your personal InkAura Books library.">
+  <title>My Library | InkAura Books</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffdf8;
+      color: #29251f;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #eadfc9;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      color: #a77b27;
+      font-size: 23px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: #514735;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #a77b27;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1000px;
+      margin: 55px auto;
+    }
+
+    .heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .heading h1 {
+      color: #9c7225;
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .heading p {
+      color: #756d60;
+    }
+
+    .library-box {
+      background: #ffffff;
+      border: 1px solid #eadfc9;
+      border-radius: 14px;
+      padding: 40px 22px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(80, 60, 20, 0.04);
+    }
+
+    .library-icon {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .library-box h2 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .library-box p {
+      color: #756d60;
+      max-width: 520px;
+      margin: 0 auto 22px;
+      font-size: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #b58a3a;
+      color: white;
+      padding: 12px 23px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .button.secondary {
+      background: #fffaf0;
+      color: #9c7225;
+      border: 1px solid #d9c08f;
+    }
+
+    .notice {
+      margin-top: 25px;
+      padding: 15px;
+      background: #fffaf0;
+      border-left: 3px solid #b58a3a;
+      border-radius: 5px;
+      color: #6d6049;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #827968;
+      font-size: 13px;
+      border-top: 1px solid #eadfc9;
+      margin-top: 65px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .heading h1 {
+        font-size: 28px;
+      }
+
+      main {
+        margin-top: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class="brand" href="index.html">InkAura Books</a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="signin.html">Sign In</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="heading">
+      <h1>My Personal Library</h1>
+      <p>Your books, together in one place.</p>
+    </section>
+
+    <section class="library-box">
+      <div class="library-icon">📚</div>
+
+      <h2>Your Library Is Waiting</h2>
+
+      <p>
+        Books you purchase from InkAura Books will eventually
+        appear here, ready for you to read and revisit.
+      </p>
+
+      <a class="button" href="books.html">Explore Books</a>
+
+      <a class="button secondary" href="signin.html">Sign In</a>
+
+      <div class="notice">
+        <strong>Library setup in progress</strong><br>
+        Customer accounts, verified purchases and private
+        book access are not active yet. Your library will
+        display purchased books once these services are
+        securely connected.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>InkAura Books — Where possibilities grow.</p>
+    <p>© 2026 InkAura Books. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
