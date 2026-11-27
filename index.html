@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#fffdf8">
   <meta name="description" content="InkAura Books — Where possibilities grow. Discover digital books, Bible storybooks and creative learning resources.">
+
   <title>InkAura Books | Where Possibilities Grow</title>
 
   <style>
@@ -19,9 +20,13 @@
       --white: #ffffff;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -31,9 +36,15 @@
       line-height: 1.7;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-    img { max-width: 100%; display: block; }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     header {
       position: sticky;
@@ -78,7 +89,9 @@
       color: var(--text);
     }
 
-    nav a:hover { color: var(--gold-dark); }
+    nav a:hover {
+      color: var(--gold-dark);
+    }
 
     .nav-button {
       background: var(--gold);
@@ -115,7 +128,9 @@
       gap: 35px;
     }
 
-    .hero-content { max-width: 620px; }
+    .hero-content {
+      max-width: 620px;
+    }
 
     .eyebrow {
       color: var(--gold-dark);
@@ -125,7 +140,9 @@
       font-weight: bold;
     }
 
-    h1, h2, h3 { line-height: 1.25; }
+    h1, h2, h3 {
+      line-height: 1.25;
+    }
 
     h1 {
       font-size: clamp(36px, 5vw, 55px);
@@ -139,11 +156,17 @@
       margin-top: 0;
     }
 
-    h3 { color: var(--gold-dark); }
+    h3 {
+      color: var(--gold-dark);
+    }
 
-    p { color: var(--muted); }
+    p {
+      color: var(--muted);
+    }
 
-    .hero p { font-size: 17px; }
+    .hero p {
+      font-size: 17px;
+    }
 
     .button {
       display: inline-block;
@@ -155,7 +178,9 @@
       margin-top: 12px;
     }
 
-    .button:hover { background: var(--gold-dark); }
+    .button:hover {
+      background: var(--gold-dark);
+    }
 
     .hero-image {
       width: 240px;
@@ -168,7 +193,9 @@
       border-bottom: 1px solid #eee8dc;
     }
 
-    .section-intro { max-width: 700px; }
+    .section-intro {
+      max-width: 700px;
+    }
 
     .featured {
       display: grid;
@@ -207,13 +234,30 @@
     }
 
     .category {
+      display: block;
       padding: 22px;
       background: var(--ivory);
       border: 1px solid var(--gold-light);
       border-radius: 6px;
+      color: inherit;
+      text-decoration: none;
+      transition: 0.2s ease;
     }
 
-    .category h3 { margin-top: 0; }
+    .category:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    }
+
+    .category h3 {
+      margin-top: 0;
+    }
+
+    .category strong {
+      color: var(--gold-dark);
+      font-size: 13px;
+    }
 
     .note {
       padding: 20px;
@@ -228,14 +272,22 @@
       text-align: center;
     }
 
-    footer p { color: #d4cabb; }
+    footer p {
+      color: #d4cabb;
+    }
 
-    footer a { color: #e5c98e; }
+    footer a {
+      color: #e5c98e;
+    }
 
     @media (max-width: 800px) {
-      .menu-button { display: block; }
+      .menu-button {
+        display: block;
+      }
 
-      .nav { flex-wrap: wrap; }
+      .nav {
+        flex-wrap: wrap;
+      }
 
       nav {
         display: none;
@@ -245,14 +297,18 @@
         gap: 0;
       }
 
-      nav.open { display: flex; }
+      nav.open {
+        display: flex;
+      }
 
       nav a {
         padding: 11px 5px;
         border-top: 1px solid var(--gold-light);
       }
 
-      .nav-button { text-align: center; }
+      .nav-button {
+        text-align: center;
+      }
 
       .hero {
         padding: 40px 25px;
@@ -265,19 +321,35 @@
         align-self: center;
       }
 
-      .grid { grid-template-columns: repeat(2, 1fr); }
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-      .featured { grid-template-columns: 1fr; }
+      .featured {
+        grid-template-columns: 1fr;
+      }
 
-      .featured img { max-height: 220px; }
+      .featured img {
+        max-height: 220px;
+      }
 
-      section { padding: 50px 0; }
+      section {
+        padding: 50px 0;
+      }
     }
 
     @media (max-width: 480px) {
-      .grid { grid-template-columns: 1fr; }
-      h2 { font-size: 26px; }
-      main { padding: 0 15px; }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+
+      main {
+        padding: 0 15px;
+      }
     }
   </style>
 </head>
@@ -286,24 +358,31 @@
 
 <header>
   <div class="nav">
+
     <a class="logo" href="index.html">
       InkAura Books
       <small>WHERE POSSIBILITIES GROW</small>
     </a>
 
-    <button class="menu-button" onclick="toggleMenu()">
+    <button
+      class="menu-button"
+      onclick="toggleMenu()"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+      id="menuToggle">
       ☰ Menu
     </button>
 
     <nav id="navigation">
       <a href="index.html">Home</a>
-      <a href="index.html#books">Books</a>
-      <a href="index.html#categories">Collections</a>
-      <a href="index.html#library">My Library</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="books.html">Books</a>
+      <a href="#categories">Collections</a>
+      <a href="#library">My Library</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
       <a class="nav-button" href="signin.html">Sign In</a>
     </nav>
+
   </div>
 </header>
 
@@ -311,7 +390,9 @@
 
   <!-- HOME -->
   <section class="hero" id="home">
+
     <div class="hero-content">
+
       <p class="eyebrow">Welcome to InkAura Books</p>
 
       <h1>Where Possibilities Grow.</h1>
@@ -324,25 +405,31 @@
       <a class="button" href="books.html">
         Explore Our Books
       </a>
+
     </div>
 
     <img
       class="hero-image"
       src="preview-cover.jpg"
       alt="InkAura Books publication preview">
+
   </section>
 
   <!-- FEATURED BOOK -->
   <section id="books">
+
     <p class="eyebrow">Our first publication</p>
+
     <h2>Featured Book</h2>
 
     <div class="featured">
+
       <img
         src="preview-cover.jpg"
         alt="God's Wonderful Creation cover">
 
       <div>
+
         <h3>God's Wonderful Creation</h3>
 
         <p>
@@ -361,44 +448,58 @@
           href="book-gods-wonderful-creation.html">
           View Book Details
         </a>
+
       </div>
     </div>
+
   </section>
 
   <!-- CATEGORIES -->
   <section id="categories">
+
     <p class="eyebrow">Discover our collections</p>
+
     <h2>Explore InkAura</h2>
 
     <div class="grid">
-      <div class="category">
+
+      <a class="category" href="category.html?type=bible">
         <h3>Bible Storybooks</h3>
         <p>Faith-inspired stories and Scripture learning.</p>
-      </div>
+        <strong>Explore Collection →</strong>
+      </a>
 
-      <div class="category">
+      <a class="category" href="category.html?type=colouring">
         <h3>Colouring & Activities</h3>
         <p>Creative colouring and activity publications.</p>
-      </div>
+        <strong>Explore Collection →</strong>
+      </a>
 
-      <div class="category">
+      <a class="category" href="category.html?type=education">
         <h3>Educational Books</h3>
         <p>Resources for learning and discovery.</p>
-      </div>
+        <strong>Explore Collection →</strong>
+      </a>
 
-      <div class="category">
+      <a class="category" href="category.html?type=creative">
         <h3>Creative Stories</h3>
         <p>Imagination, storytelling and adventure.</p>
-      </div>
+        <strong>Explore Collection →</strong>
+      </a>
+
     </div>
+
   </section>
 
   <!-- LIBRARY -->
   <section id="library">
+
     <p class="eyebrow">Your reading space</p>
+
     <h2>My Library</h2>
 
     <div class="note">
+
       <p>
         Your purchased books will eventually be available
         in your personal InkAura library.
@@ -410,14 +511,20 @@
       </p>
 
       <strong>Personal Library — Coming Soon</strong>
+
     </div>
 
-    <a class="button" href="signin.html">Customer Account</a>
+    <a class="button" href="signin.html">
+      Customer Account
+    </a>
+
   </section>
 
   <!-- ABOUT -->
   <section id="about">
+
     <p class="eyebrow">Our purpose</p>
+
     <h2>About InkAura Books</h2>
 
     <p class="section-intro">
@@ -426,11 +533,14 @@
       learning. We believe possibilities grow through
       reading, imagination and discovery.
     </p>
+
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
+
     <p class="eyebrow">Get in touch</p>
+
     <h2>Contact Us</h2>
 
     <p>
@@ -442,20 +552,32 @@
       Our official customer support contact details
       will be published here when ready.
     </p>
+
   </section>
 
 </main>
 
 <footer>
+
   <strong>InkAura Books</strong>
+
   <p>Where Possibilities Grow.</p>
+
   <p>© 2026 InkAura Books. All rights reserved.</p>
+
 </footer>
 
 <script>
   function toggleMenu() {
     const nav = document.getElementById("navigation");
+    const button = document.getElementById("menuToggle");
+
     nav.classList.toggle("open");
+
+    button.setAttribute(
+      "aria-expanded",
+      nav.classList.contains("open")
+    );
   }
 </script>
 
